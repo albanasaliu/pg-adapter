@@ -4,5 +4,26 @@
     "gitignore": "^0.7.0",
     "pg": "^8.8.0",
     "readline-sync": "^1.4.10"
-  }
+  },
+  "name": "@albanasaliu/pg-adapter",
+  "description": "Helps connect to Postgresql via npm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albanasaliu/pg-adapter.git"
+  },
+  "keywords": [
+    "postgresql"
+  ],
+  "author": "Albana Saliu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albanasaliu/pg-adapter/issues"
+  },
+  "homepage": "https://github.com/albanasaliu/pg-adapter#readme"
 }
