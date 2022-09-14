@@ -7,6 +7,7 @@ function postgresql_connection() {
     let user_input = input.toLocaleLowerCase();
 
     const query = `SELECT * FROM support.tickets`;
+    console.log(query);
 
     if(user_input === "pool") {
         //creating a pool
@@ -54,6 +55,9 @@ function postgresql_connection() {
             }
             await client.end();
         })();
+    }
+    else {
+        console.log("Please enter a valid input!");
     }
 }
 

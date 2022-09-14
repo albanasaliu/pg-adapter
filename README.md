@@ -4,4 +4,4 @@ Helps connect to Postgresql via npm
 
 # Installation
 
-`npm i pg-adapter --save`
+`npm i @albanasaliu/pg-adapter`
