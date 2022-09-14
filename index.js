@@ -1,6 +1,6 @@
 function postgresql_connection() {
     const readline = require("readline-sync");
-    const { Pool, Client } = require('pg');
+    const { Pool, Client } = require("pg");
     const config = require("./config");
 
     let input = readline.question("What kind of connection do you want to establish? (Pool or Client): ");
@@ -32,7 +32,7 @@ function postgresql_connection() {
             await PG_DB.end();
         })();
     } else if (user_input === "client") {
-        //reating a single client
+        //creating a single client
         const client = new Client({
             "host": config.postgresql.host,
             "user": config.postgresql.user,
@@ -57,4 +57,4 @@ function postgresql_connection() {
     }
 }
 
-module.exports.postgresql_connection = postgresql_connection();
+module.exports.postgresql_connection = postgresql_connection;
