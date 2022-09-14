@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "gitignore": "^0.7.0",
+    "pg": "^8.8.0",
+    "readline-sync": "^1.4.10"
+  }
+}
