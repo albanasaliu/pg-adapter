@@ -5,11 +5,9 @@ function postgresql_connection() {
 
     let input = readline.question("What kind of connection do you want to establish? (Pool or Client): ");
     let user_input = input.toLocaleLowerCase();
-
     const query = `SELECT * FROM support.tickets`;
-    console.log(query);
 
-    if(user_input === "pool") {
+    if (user_input === "pool") {
         //creating a pool
         const PG_DB = new Pool({
             "host": config.postgresql.host,
