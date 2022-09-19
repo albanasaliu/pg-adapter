@@ -21,10 +21,13 @@ To install and set up the library on your local machine, try running the followi
 
 ### Download the package
 
-### index.js code example on how to call the method which establishes the connection you require
+### Import and run the package
 
-`import { postgresql_connection } from "@albanasaliu/pg-adapter/index.js";
-postgresql_connection();`
+```
+import { postgresql_connection } from "@albanasaliu/pg-adapter/index.js";
+
+postgresql_connection();
+```
 
 ### Running the app
 
