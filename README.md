@@ -1,9 +1,13 @@
 # Project name
 Postgresql Adapter
 
+## Prerequisites
+
+:warning: **Warning:** This package requires you to have the .env file available on your machine in order to run
+
 ## Installation
 
-To install and set up the library on your local machine, run:
+To install and set up the library on your local machine, try running the following command:
 
 `npm i @albanasaliu/pg-adapter`
 
@@ -17,7 +21,7 @@ To install and set up the library on your local machine, run:
 
 ### Download the package
 
-### index.js example on how to call the method
+### index.js code example on how to call the method which establishes the connection you require
 
 `import { postgresql_connection } from "@albanasaliu/pg-adapter/index.js";`
 `postgresql_connection();`
