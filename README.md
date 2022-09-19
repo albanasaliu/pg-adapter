@@ -1,5 +1,6 @@
-# Project name
-Postgresql Adapter
+# Postgresql Adapter
+
+Helps establish database connections, either pool or client
 
 ## Prerequisites
 
