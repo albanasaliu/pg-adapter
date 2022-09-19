@@ -4,12 +4,12 @@ function postgresql_connection() {
     const config = require("./config");
 
     let input = readline.question("What kind of connection do you want to establish? (Pool or Client): ");
-    let user_input = input.toLocaleLowerCase();
+    let user_input = input.toLowerCase();
     const query = `SELECT * FROM support.tickets`;
 
     if (user_input === "pool") {
         //creating a pool
-        const PG_DB = new Pool({
+        const pool = new Pool({
             "host": config.postgresql.host,
             "user": config.postgresql.user,
             "port": config.postgresql.port,
@@ -18,8 +18,8 @@ function postgresql_connection() {
         });
         (async () => {
             try {
-                const pool_conn = await PG_DB.connect();
-                const res = await pool_conn.query(query);
+                await pool.connect();
+                const res = await pool.query(query);
 
                 for (let row of res.rows) {
                     console.log(row);
@@ -27,8 +27,9 @@ function postgresql_connection() {
                 console.log(`You are using ${user_input} connection`);
             } catch (err) {
                 console.error(err);
+            } finally {
+                //await pool.end();
             }
-            await PG_DB.end();
         })();
     } else if (user_input === "client") {
         //creating a single client
@@ -41,8 +42,8 @@ function postgresql_connection() {
         });
         (async () => {
             try {
-                const client_connection = await client.connect();
-                const res = await client_connection.query(query);
+                await client.connect();
+                const res = await client.query(query);
 
                 for (let row of res.rows) {
                     console.log(row);
@@ -50,8 +51,9 @@ function postgresql_connection() {
                 console.log(`You are using ${user_input} connection`);
             } catch (err) {
                 console.error(err);
+            } finally {
+                await client.end();
             }
-            await client.end();
         })();
     }
     else {
